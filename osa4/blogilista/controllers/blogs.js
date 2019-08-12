@@ -26,7 +26,6 @@ blogsRouter.get('/', async (request, response) => {
 blogsRouter.post('/', async (request, response, next) => {
     /* const blog = new Blog(request.body) */
     const body = request.body
-    console.log(request.token)
 
     /* blog
         .save()
@@ -78,7 +77,7 @@ blogsRouter.delete('/:id', async (request, response, next) => {
         }
         else {
             response.status(401).json({ error: 'wrong token' })
-        }     
+        }
 
     } catch (error) {
         next(error)
